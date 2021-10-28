@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 
-const AnimatedButton = ({ handleButonClick, scaleAmount }) => {
+const AnimatedButton = ({ handleButonClick, scaleAmount, textColor, backColor }) => {
     const [buttonText, setButtonText] = useState("Click if you like!");
 
     function buttonClicked(){
@@ -11,7 +11,8 @@ const AnimatedButton = ({ handleButonClick, scaleAmount }) => {
 
     return (
         <div>
-            <motion.button whileHover={{ scale: scaleAmount }} onClick={ () => buttonClicked() }>
+            <motion.button whileHover={{ scale: scaleAmount, color: textColor, backgroundColor: backColor }} 
+                onClick={ () => buttonClicked() }>
                 {buttonText}</motion.button>
         </div>
     )
